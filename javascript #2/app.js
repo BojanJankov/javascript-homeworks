@@ -6,7 +6,7 @@ let yearNumber = Number(yearInput);
 
 let zodiacYearNumber = (yearNumber - 4) % 12;
 
-if (yearNumber === null || yearNumber === 0 || isNaN(yearNumber)) {
+if (yearNumber === null || yearNumber === 0 || Number.isNaN(yearNumber)) {
   alert("Enter right year with numbers");
 } else if (zodiacYearNumber === 0) {
   alert("You are Rat");
