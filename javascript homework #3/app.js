@@ -32,43 +32,20 @@ calculateAge(2000);
 // string
 // undefined
 
-function stringFunction(stringInput) {
-    console.log(`This is string:${stringInput}`);
-    return;
 
+function typeOfFunction(type) {
+    let input = typeof type;
+    console.log(input)
+    return input;
 }
 
-stringFunction("Bojan");
+typeOfFunction(3 > 4)
+typeOfFunction("Bojan")
+typeOfFunction(54)
+typeOfFunction()
+typeOfFunction(null)
 
-function numberFunction(numberInput) {
-    console.log(`This is number: ${numberInput}`);
-    return;
-}
 
-numberFunction(54);
-
-function booleanFunction(booleanInput) {
-    console.log(`This is boolean: ${booleanInput}`);
-    return;
-}
-
-booleanFunction(4 > 5);
-
-function undefinedFunction() {
-    let undefinedInput = undefined;
-    console.log(`This is undefind: ${undefinedInput}`);
-    return;
-}
-
-undefinedFunction();
-
-function nullFunction() {
-    let nullInput = null;
-    console.log(`This is obejct: ${nullInput}`);
-    return;
-}
-
-nullFunction();
 
 
 // // HOMEWORK PART 2
@@ -80,21 +57,19 @@ nullFunction();
 
 
 
-function dogYearCalc(year) {
-    let dogYearResult = year * 7;
-    console.log(`This is your dog years:${dogYearResult}`)
-    return dogYearResult;
+function dogYearCalc(years, type) {
+    let humanYearResult = years / 7;
+    let dogYearResult = years * 7;
+    if (type === "dog") {
+        console.log(`This is your dog years:${dogYearResult}`)
+    } else if (type === "human")
+        console.log(`This is your human years:${humanYearResult}`)
+    return;
 }
 
-dogYearCalc(5);
+dogYearCalc(50, "human");
+dogYearCalc(7, "dog");
 
-function humanYearCalc(dogYear) {
-    let humanYearResult = dogYear / 7;
-    console.log(`This is your human years:${humanYearResult}`)
-    return humanYearResult;
-}
-
-humanYearCalc(35);
 
 // HOMEWORK PART 3
 // Write a javascript function for an ATM:
@@ -117,6 +92,7 @@ function atm(ammountOfMoney) {
         let withdrawMoney = ammountOfMoney - moneyNumber;
         alert(`Thank you for your withdraw of ${moneyNumber}, this is your balance now: ${withdrawMoney}`)
     }
+    return;
 }
 
 atm(1000); 
