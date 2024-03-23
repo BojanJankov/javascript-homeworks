@@ -36,6 +36,14 @@ If one of the numbers of the array is invalid show an error message instead of a
 //     return resultSum;
 // }
 
+function numberSum(arrayInput) {
+  let resultSum = 0;
+  for (let i = 0; i < numArray.length; i++) {
+    resultSum += numArray[i];
+  }
+  return resultSum;
+}
+
 // let numArray = [2, 5, 8, 4, 3];
 // let result = numberSum(numArray);
 // console.log(result);
@@ -52,6 +60,17 @@ If one of the numbers of the array is invalid show an error message instead of a
 //     }
 // }
 
+function validateNumber([numberInput]) {
+  let result = 0;
+  if (typeof numberInput === "number") {
+    result += numberInput;
+    console.log(result);
+    return result;
+  } else {
+    console.log("Input valid numbers");
+  }
+}
+
 // let numberArray = [2, 5, 8, 4, 3];
 
 // validateNumber([2]);
@@ -61,7 +80,6 @@ If one of the numbers of the array is invalid show an error message instead of a
 // validateNumber([3]);
 // validateNumber(["Bojan"]);
 
-
 /* HOMEWORK #3
 Write a javascript function that:
 When given any array of strings (should work with array with any number of elements)
@@ -69,6 +87,7 @@ It will create one big string and return it
 Ex:["Hello", "there", "students", "of", "SEDC", "!"]
 Result: "Hello there students of SEDC !"
 */
+
 // function concatenateStrings(inputArray) {
 
 //     for (let i = 0; i < inputArray.length; i++) {
@@ -78,9 +97,17 @@ Result: "Hello there students of SEDC !"
 //     inputArray;
 // }
 
-
 // let stringArray = ["Hello", "there", "students", "of", "SEDC", "!"];
 // concatenateStrings(stringArray);
+
+function concatenateStrings(inputArray) {
+  for (let i = 0; i < inputArray.length; i++) {
+    console.log(inputArray.join(" "));
+  }
+}
+
+let stringArray = ["Hello", "there", "students", "of", "SEDC", "!"];
+concatenateStrings(stringArray);
 
 /* HOMEWORK #4
 Title: Looping structures
@@ -108,29 +135,35 @@ Output: Max: 11, Min: 3, Sum: 14
 Bonus: Try making the function work if there are other types of items in it
 */
 
-
-
 function sumAndMaxAndMinNumbersTwo(inputArray) {
-    let max = inputArray[0];
-    let min = inputArray[0];
-    for (let counter = 0; counter < inputArray.length; counter++) {
-        if (inputArray[counter] !== Number) {
-            console.log(`${inputArray[counter]} is not a number. Input all numbers in array.`)
-        }
+  let max = inputArray[0];
+  let min = inputArray[0];
+  for (let counter = 0; counter < inputArray.length; counter++) {
+    if (inputArray[counter] !== Number) {
+      console.log(
+        `${inputArray[counter]} is not a number. Input all numbers in array.`
+      );
     }
-    for (let counter = 0; counter < inputArray.length; counter++) {
-        let numberOne = inputArray[counter];
-        if (numberOne > max)
-            max = numberOne;
-        let numberTwo = inputArray[counter];
-        if (numberTwo < min) min = numberTwo;
-    }
-    let resultSum = max + min;
-    return (`Max: ${max}, Min: ${min}, Sum: ${resultSum}.`);
+  }
+  for (let counter = 0; counter < inputArray.length; counter++) {
+    let numberOne = inputArray[counter];
+    if (numberOne > max) max = numberOne;
+    let numberTwo = inputArray[counter];
+    if (numberTwo < min) min = numberTwo;
+  }
+  let resultSum = max + min;
+
+  let max = inputArray[0];
+  let min = inputArray[0];
+  for (let counter = 0; counter < inputArray.length; counter++) {
+    let numberOne = inputArray[counter];
+    if (numberOne > max) max = numberOne;
+    let numberTwo = inputArray[counter];
+    if (numberTwo < min) min = numberTwo;
+  }
+  let resultSum = max + min;
+  return `Max: ${max}, Min: ${min}, Sum: ${resultSum}.`;
 }
-
-
-
 
 let sumArray = [3, 5, 6, 8, 11];
 
